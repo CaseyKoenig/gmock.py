@@ -117,7 +117,7 @@ class mock_method:
 
         mock.append(gap)
         mock.append(
-            "MOCK_%(const)sMETHOD%(nr)s%(template)s(%(name)s, %(result_type)s(%(args)s));" % {
+            "MOCK_%(const)sMETHOD%(nr)s%(template)s( %(name)s, %(result_type)s( %(args)s ) );" % {
             'const' : self.is_const and 'CONST_' or '',
             'nr' : self.args_size,
             'template' : self.is_template and '_T' or '',
@@ -313,7 +313,6 @@ def main(args):
 
     if options.libclang:
       Config.set_library_file(options.libclang)
-
     return mock_generator(
         files = args[1:],
         args = clang_args,
