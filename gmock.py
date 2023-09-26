@@ -213,7 +213,7 @@ class mock_generator:
             spelling = node.spelling
             tokens = [token.spelling for token in node.get_tokens()]
             file = node.location.file.name
-            if node.is_pure_virtual_method():
+            if node.is_virtual_method():
                 mock_methods.setdefault(expr, [file]).append(
                     mock_method(
                          self.__get_result_type(tokens, spelling),
